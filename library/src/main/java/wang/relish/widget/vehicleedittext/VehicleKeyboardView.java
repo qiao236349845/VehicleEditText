@@ -2,6 +2,7 @@ package wang.relish.widget.vehicleedittext;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -13,6 +14,7 @@ import android.inputmethodservice.KeyboardView;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
+import android.view.View;
 import android.view.WindowManager;
 
 import androidx.core.content.ContextCompat;
@@ -68,8 +70,13 @@ class VehicleKeyboardView extends KeyboardView {
             WindowManager windowManager = ((Activity) context).getWindowManager();
             metrics = new DisplayMetrics();
             windowManager.getDefaultDisplay().getMetrics(metrics);
+        }else {
+            WindowManager windowManager = (WindowManager) context.getApplicationContext().getSystemService(Context.WINDOW_SERVICE);
+            metrics = new DisplayMetrics();
+            windowManager.getDefaultDisplay().getMetrics(metrics);
         }
     }
+
 
     void switchToProvinces() {
         if (getKeyboard() == mProvincesKeyBoard) return;
