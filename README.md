@@ -13,9 +13,11 @@ Android用于车牌号输入的自定义键盘.仿"支付宝-车主服务-添加
 
 ## 二、如何使用
 
+支持gradle 7.2 jdk 11。
+maven { url 'https://jitpack.io' }
 在`app/build.gradle`的`dependencies`节点下添加:
 ```groovy
-implementation "wang.relish.widget:vehicleedittext:1.0.2"
+implementation 'com.github.qiao236349845:VehicleEditText:1.0.1'
 ```
 
 ### 1 使用原生EditText(**推荐**)
